@@ -62,10 +62,18 @@ export const authOptions: AuthOptions = {
 
 };
 
-const handler = NextAuth(authOptions);
+// const handler = NextAuth(authOptions);
 
-export { handler as GET, handler as POST };
+// export { handler as GET, handler as POST };
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
+    await NextAuth(req, res, authOptions);
+};
+
+export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
+    await NextAuth(req, res, authOptions);
+};
+
+export const POST = async (req: NextApiRequest, res: NextApiResponse) => {
     await NextAuth(req, res, authOptions);
 };
