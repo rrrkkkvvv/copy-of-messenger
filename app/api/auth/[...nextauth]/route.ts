@@ -4,9 +4,9 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
+import { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
 
 import prisma from '@/app/libs/prismadb';
-import { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
 
 
 export const authOptions: AuthOptions = {
@@ -62,9 +62,7 @@ export const authOptions: AuthOptions = {
 
 };
 
-const handler: NextApiHandler = async (req: NextApiRequest, res: NextApiResponse) => {
-    await NextAuth(req, res, authOptions);
-};
+ const handler = NextAuth(authOptions);
+ export { handler as GET, handler as POST };
+ export default handler
 
-export { handler as GET, handler as POST };
-export default handler;
