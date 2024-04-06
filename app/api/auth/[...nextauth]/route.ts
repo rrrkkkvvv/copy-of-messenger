@@ -66,4 +66,6 @@ const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
 
-export default (request:NextApiRequest, response:NextApiResponse) => NextAuth(request, response, authOptions);
+export default async (req: NextApiRequest, res: NextApiResponse) => {
+    await NextAuth(req, res, authOptions);
+};
