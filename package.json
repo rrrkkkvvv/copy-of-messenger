@@ -45,6 +45,7 @@
     "@headlessui/react": "^1.7.18",
     "aws-sdk": "^2.1580.0",
     "lodash": "^4.17.21",
+    "openai": "^4.33.0",
     "pusher": "^5.2.0",
     "pusher-js": "^8.4.0-rc2",
     "react-select": "^5.8.0",
